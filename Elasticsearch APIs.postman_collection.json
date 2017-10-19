@@ -1,0 +1,171 @@
+{
+	"id": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+	"name": "Elasticsearch APIs",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "Cat API",
+			"description": "",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"order": [
+				"262c9ad4-1b4d-37bf-7d16-4ec8c5229d29"
+			],
+			"owner": "2962643",
+			"folders_order": [],
+			"id": "a95b6668-6432-4bd9-54fc-5d3b7b82bcfe"
+		},
+		{
+			"name": "Document APIs",
+			"description": "",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"order": [
+				"1a3faa75-a067-68f7-b5e2-e09d47175eb7"
+			],
+			"owner": "2962643",
+			"folders_order": [],
+			"id": "f27c11de-3c57-7b74-ae13-a6d0de10ee15"
+		},
+		{
+			"name": "Index API",
+			"description": "The create index API allows to instantiate an index.",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"order": [
+				"3120c053-f28b-acf5-9e94-8bbd53e59304",
+				"2da0af7c-39c1-3783-772c-9de78be596ea",
+				"732a6f20-6bce-ebf4-2fac-f7013e87d332"
+			],
+			"owner": "2962643",
+			"folders_order": [],
+			"id": "45749a3e-12f2-8247-321f-5e987b909d16"
+		}
+	],
+	"folders_order": [
+		"f27c11de-3c57-7b74-ae13-a6d0de10ee15",
+		"a95b6668-6432-4bd9-54fc-5d3b7b82bcfe",
+		"45749a3e-12f2-8247-321f-5e987b909d16"
+	],
+	"timestamp": 1508380280030,
+	"owner": "2962643",
+	"public": false,
+	"requests": [
+		{
+			"id": "1a3faa75-a067-68f7-b5e2-e09d47175eb7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{url}}:{{port}}/{{index}}/{{type}}/{{doc_id}}",
+			"folder": "f27c11de-3c57-7b74-ae13-a6d0de10ee15",
+			"queryParams": [],
+			"preRequestScript": "postman.setEnvironmentVariable(\"index\", \"facebook\");\npostman.setEnvironmentVariable(\"type\", \"post\");\npostman.setEnvironmentVariable(\"doc_id\", \"1\");",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508395715380,
+			"name": "Index Document",
+			"description": "The index API adds or updates a typed JSON document in a specific index, making it searchable.",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"responses": [],
+			"rawModeData": "{\r\n    \"user\" : \"sittinut.chivakunakorn\",\r\n    \"post_date\" : \"2017-10-19T14:12:12\",\r\n    \"message\" : \"This is test by S. Chivakunakorn.\"\r\n}"
+		},
+		{
+			"id": "262c9ad4-1b4d-37bf-7d16-4ec8c5229d29",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{url}}:{{port}}/_cat/indices",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508395714553,
+			"name": "foo",
+			"description": "",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"responses": []
+		},
+		{
+			"id": "2da0af7c-39c1-3783-772c-9de78be596ea",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{url}}:{{port}}/{{index}}/_mapping/{{mapping_type}}",
+			"folder": "45749a3e-12f2-8247-321f-5e987b909d16",
+			"queryParams": [],
+			"preRequestScript": "postman.setEnvironmentVariable(\"index\", \"twitter\");\npostman.setEnvironmentVariable(\"mapping_type\", \"user\");",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508396182548,
+			"name": "Put Mapping",
+			"description": "The PUT mapping API allows you to add a new type to an existing index, or add new fields to an existing type.",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"responses": [],
+			"rawModeData": "{\r\n  \"properties\": {\r\n    \"name\": {\r\n      \"type\": \"text\"\r\n    }\r\n  }\r\n}"
+		},
+		{
+			"id": "3120c053-f28b-acf5-9e94-8bbd53e59304",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{url}}:{{port}}/{{index}}",
+			"queryParams": [],
+			"preRequestScript": "postman.setEnvironmentVariable(\"index\", \"facebook\");",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508395551225,
+			"name": "Put Index",
+			"description": "The create index API allows to instantiate an index.",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"responses": []
+		},
+		{
+			"id": "732a6f20-6bce-ebf4-2fac-f7013e87d332",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{url}}:{{port}}/{{index}}/_mapping",
+			"queryParams": [],
+			"preRequestScript": "postman.setEnvironmentVariable(\"index\", \"twitter\");",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508396184604,
+			"name": "Get Mapping",
+			"description": "",
+			"collectionId": "924de822-f616-cca7-75c5-a78ce2f04cc0",
+			"responses": []
+		}
+	]
+}
